@@ -3,13 +3,17 @@ const siteID = "107403796"
 export const base_URL = "https://public-api.wordpress.com/rest/v1.1/sites/" + siteID + "/";
 
 export const URL = {
+    getCategories: () => {
+        return `${base_URL}categories`;
+    },
     getPostsLink: (category, paginationConfig) => {
+        const { pageSize, pageNumber } = paginationConfig;
         return category === 'all-categories'
-            ? `${base_URL}posts/?fields=slug,categories,post_thumbnail,title,date&number=${paginationConfig.pageSize}&page=${paginationConfig.pageNumber}`
-            : `${base_URL}posts/?category=${category}&fields=slug,categories,post_thumbnail,title,date&number=${paginationConfig.pageSize}&page=${paginationConfig.pageNumber}`
+            ? `${base_URL}posts/?fields=slug,categories,post_thumbnail,title,date&number=${pageSize}&page=${pageNumber}`
+            : `${base_URL}posts/?category=${category}&fields=slug,categories,post_thumbnail,title,date&number=${pageSize}&page=${pageNumber}`
     },
     getPostDetailLink: (slug) => {
-        return `${base_URL}posts/slug:${slug}?fields=featured_image,title,author,content,date`
+        return `${base_URL}posts/slug:${slug}?fields=featured_image,title,author,content,date`;
     }
 }
 

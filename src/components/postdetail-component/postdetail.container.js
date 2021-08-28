@@ -1,9 +1,10 @@
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { PostDetailGetAction } from "../actions";
-import PostDetailComponent from "../components/postdetail-component/postdetail.component";
+import { PostDetailGetAction } from "../../actions/index";
+import PostDetailComponent from "./postdetail.component";
 
 const mapStateToProps = state => ({
+  loading: state.postDetail.loading,
   postDetail: state.postDetail.post
 });
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-import PostDetailContainer from "../../containers/postdetail";
+import PostDetailContainer from "../../components/postdetail-component/postdetail.container";
 
 
 const PostDetailPage = () => {

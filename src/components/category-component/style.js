@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { themeColors } from '../../config/config';
+import { deviceWidths } from '../../config/config';
 
 export const CategoryComponentWrapper = styled.div`
     
@@ -11,6 +11,10 @@ export const CategoryComponentWrapper = styled.div`
     }
     .category-filter-dropdown: focus {
         outline: none;
+    }
+
+    @media (max-width:${deviceWidths.phoneWidth}) {
+       
     }
 
 `

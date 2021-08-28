@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { usePagination, DOTS } from '../../utils/use-pagination';
-
 import { PaginationContainer } from "./style";
 
 const Pagination = props => {
@@ -41,15 +40,16 @@ const Pagination = props => {
             >
                 <div className="arrow left" />
             </li>
-            {paginationRange.map(pageNumber => {
+            {paginationRange.map((pageNumber,index) => {
                 if (pageNumber === DOTS) {
-                    return <li className="pagination-item dots">&#8230;</li>;
+                    return <li className="pagination-item dots" key={pageNumber + index}>&#8230;</li>;
                 }
 
                 return (
                     <li
                         className={pageNumber === currentPage ? 'pagination-item selected' : 'pagination-item'}
                         onClick={() => onPageChange(pageNumber)}
+                        key={pageNumber + index}
                     >
                         {pageNumber}
                     </li>

@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { PostGetAction, SetPaginationConfigAction } from "../../actions";
 import PostComponent from "./post.component";
 
 const mapStateToProps = state => ({
+  loading: state.postsList.loading,
   postsList: state.postsList.posts,
   totalPostsCount: state.postsList.totalCount,
   categoriesColor: state.categoriesColorList.categoriesColor,

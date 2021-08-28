@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { CategoriesGetAction, PostGetAction, SetCategoriesColorAction, SetSelectedCategoryAction, SetPaginationConfigAction } from "../../actions";

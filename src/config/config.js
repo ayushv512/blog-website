@@ -5,22 +5,16 @@ export const deviceWidths = {
   smallDesktop: '1360px'
 };
 
-//export const sampleOkrsUrl = 'https://okrcentral.github.io/sample-okrs/db.json';
-
 export const themeColors = {
-  //button: ' #13ce95',
   white: '#FFFFFF',
-  backgroundBody: '#0c233d',
-  backgroundParent: '#f9fbfd',
-  blue:'#001049',
-  icon: '#172e4599',
-  parent: '#343740',
-  child: ' #333333',
-  border: '#e6edf5'
+  backgroundBody: '#f4f7f9',
+  footer:'#001049',
+  title: '#212121',
+  date: '#a8adaa',
+  pagination: '#0589ff',
+  border: ''
 };
 
 export const enums = Object.freeze({
-  // OKRS_TITLE: 'OKRs',
   // FILTER_ALL: 'All',
-  // CATEGORY_FILTERS: 'Category Filters:'
 });

@@ -3,20 +3,20 @@ import React from "react";
 import CategoryContainer from "../../components/category-component/category.container";
 import PostContainer from "../../components/post-component/post.container";
 
-// import {  } from "./style";
+import { PostsPageWrapper, PostsPageSection } from "./style";
 //import TruecallerBlogImage from "../../assets/images/header.jpg";
 
 const PostsPage = () => {
   return (
-    <div>
+    <PostsPageWrapper>
       <div className="img-container"> The Truecaller Blog </div>
       {/* <img className="blog-img" src={TruecallerBlogImage} alt="truecaller blog" /> */}
-      <div className="main-section">
+      <PostsPageSection>
         <div className="title">Latest articles</div>
         <CategoryContainer />
         <PostContainer />
-      </div>
-    </div>
+      </PostsPageSection>
+    </PostsPageWrapper>
   );
 };
 
