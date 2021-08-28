@@ -5,7 +5,8 @@ import { CategoriesGetAction, PostGetAction, SetCategoriesColorAction, SetSelect
 import CategoryComponent from "./category.component";
 
 const mapStateToProps = state => ({
-  categoriesList: state.categoriesList.categories
+  categoriesList: state.categoriesList.categories,
+  selectedCategory: state.selectedCategory.selectedCategory
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -14,6 +14,7 @@ export const URL = {
 }
 
 export const IMAGE_NOT_FOUND_URL = 'https://www.metisgl.com/assets/camaleon_cms/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png';
+
 // Category Default
 export const DEFAULT_CATEGORY = "all-categories";
 
