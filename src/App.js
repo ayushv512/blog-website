@@ -1,5 +1,5 @@
 import './App.css';
-import LandingPage from './pages/landingpage/landing.page';
+import LandingPage from './pages/landing-page/landing.page';
 
 const App = () => {
   return (

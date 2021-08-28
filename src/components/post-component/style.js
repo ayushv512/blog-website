@@ -15,6 +15,7 @@ export const PostComponentWrapper = styled.div`
      border: 1px solid #f5f5f5;
      background-color: ${themeColors.white};
      box-shadow: 0 2px 2px rgb(0 0 0 / 0.1);
+     cursor: pointer;
 
      .post-title {
         margin: 10px 25px;
