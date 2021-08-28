@@ -1,4 +1,4 @@
-import { GET_CATEGORIES } from '../constants/ActionTypes';
+import { GET_CATEGORIES } from '../actions/ActionTypes';
 
 const initialState = {
     loading: false,

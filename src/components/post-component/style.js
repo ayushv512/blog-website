@@ -10,7 +10,6 @@ export const PostComponentWrapper = styled.div`
   
   .post-card {
      width: 350px;
-     height: 300px;
      margin: 20px 0;
      border: 1px solid #f5f5f5;
      background-color: ${themeColors.white};
@@ -39,4 +38,27 @@ export const PostComponentWrapper = styled.div`
         font-weight: 500;
      }
   }
+`;
+
+export const CategoriesSection = styled.div`
+  display:flex;
+  flex-wrap: wrap;
+  margin: 10px;
+`;
+
+export const Category = styled.div`
+   display:flex;
+   margin: 5px;
+`;
+
+export const Bullet = styled.div`
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   background-color: ${props => props.backgroundColor};
+   margin-right: 5px;
+`;
+
+export const CategoryLabel = styled.div`
+
 `;

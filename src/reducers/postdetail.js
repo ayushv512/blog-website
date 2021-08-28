@@ -1,4 +1,4 @@
-import { GET_POST_DETAIL } from '../constants/ActionTypes';
+import { GET_POST_DETAIL } from '../actions/ActionTypes';
 
 const initialState = {
     loading: false,

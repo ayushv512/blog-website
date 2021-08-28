@@ -23,3 +23,28 @@ export const timeDifference = previous => {
     return Math.round(elapsed / msPerYear) + " years ago";
   }
 };
+
+export const assignColorToCategories = categories => {
+  let categoriesColor = {};
+  if (categories && Array.isArray(categories) && categories.length) {
+    categoriesColor = categories.reduce((categoriesColor, curr_category) => {
+      if (!categoriesColor.hasOwnProperty(curr_category.slug)) {
+        categoriesColor[curr_category.slug] = {
+          color: getRandomColor(),
+        }
+      }
+      return categoriesColor;
+    }, {})
+  }
+
+  return categoriesColor;
+};
+
+export const getRandomColor = () => {
+  const rC = Math.floor(Math.random() * 256);
+  const gC = Math.floor(Math.random() * 256);
+  const bC = Math.floor(Math.random() * 256);
+  const color = `rgb(${rC},${gC},${bC})`;
+
+  return color;
+};

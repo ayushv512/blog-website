@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { CategoryComponentWrapper } from './style';
+import { assignColorToCategories } from "../../utils";
 
 const CategoryComponent = props => {
 
@@ -7,9 +8,16 @@ const CategoryComponent = props => {
     props.categoriesGetAction();
   }, []);
 
+  useEffect(() => {
+    if (props.categoriesList) {
+      let categoriesColor = assignColorToCategories(props.categoriesList);
+      props.setCategoriesColorAction(categoriesColor);
+    }
+  }, [props.categoriesList]);
+
   const createOptions = () => {
-    return props.categoriesList.map((categoryItem, index) => (
-      <option key={index} value={categoryItem.slug}>
+    return props.categoriesList.map(categoryItem => (
+      <option key={categoryItem.ID} value={categoryItem.slug}>
         {categoryItem.name}
       </option>
     ));
@@ -26,8 +34,9 @@ const CategoryComponent = props => {
           <select
             className="category-filter-dropdown"
             onChange={e => categoryFilterChangeHandler(e)}
+            defaultValue="all-categories"
           >
-            <option value="all-categories" selected>All categories</option>
+            <option value="all-categories">All categories</option>
             {createOptions()}
           </select>
         </CategoryComponentWrapper>
