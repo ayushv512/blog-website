@@ -1,2 +1,3 @@
 export const GET_CATEGORIES = "GET_CATEGORIES";
+export const SET_CATEGORIES_COLOR = "SET_CATEGORIES_COLOR";
 export const GET_POSTS = "GET_POSTS";

@@ -1,4 +1,4 @@
-import { GET_POSTS } from '../constants/ActionTypes';
+import { GET_POSTS } from '../actions/ActionTypes';
 
 const initialState = {
     loading: false,
