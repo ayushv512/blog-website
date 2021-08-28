@@ -12,7 +12,7 @@ const PostComponent = props => {
 
   const getCategoriesPills = categories => {
     // return JSON.stringify(categories);
-    return 'abc';
+    return "abc";
   };
 
   const PostCard = postItem => {
@@ -27,21 +27,19 @@ const PostComponent = props => {
     );
   };
 
-  const postCardHandler = (slug) => {
-    history.push("/blogs/" + slug );
-  }
+  const postCardHandler = slug => {
+    history.push(`/blogs/${slug}`);
+  };
 
   const formatDate = date => timeDifference(new Date(date));
 
-  return (
-    props.postsList
-      ? (<PostComponentWrapper>
-        {props.postsList.map(postItem => {
-          return <PostCard {...postItem} />;
-        })}
-      </PostComponentWrapper>)
-      : null
-  );
+  return props.postsList ? (
+    <PostComponentWrapper>
+      {props.postsList.map(postItem => {
+        return <PostCard {...postItem} />;
+      })}
+    </PostComponentWrapper>
+  ) : null;
 };
 
 export default PostComponent;

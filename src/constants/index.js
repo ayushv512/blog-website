@@ -7,5 +7,11 @@ export const URL = {
         return category === 'all-categories'
             ? `${base_URL}posts/?fields=slug,categories,post_thumbnail,title,date&number=20&page=1`
             : `${base_URL}posts/?category=${category}&fields=slug,categories,post_thumbnail,title,date&number=20&page=1`
+    },
+
+    getPostDetailLink: (slug) => {
+        return `${base_URL}posts/slug:${slug}?fields=featured_image,title,author,content,date`
     }
+
+
 }
