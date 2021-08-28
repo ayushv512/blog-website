@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { PostGetAction } from "../actions";
-import PostComponent from "../components/post-component/post.component";
+import { PostDetailGetAction } from "../actions";
+import PostDetailComponent from "../components/postdetail-component/postdetail.component";
 
 const mapStateToProps = state => ({
-  //postsList: state.postsList.posts
+  postDetail: state.postDetail.post
 });
 
 const mapDispatchToProps = dispatch => ({
- // postGetAction: bindActionCreators(PostGetAction, dispatch)
+  postDetailGetAction: bindActionCreators(PostDetailGetAction, dispatch)
 });
 export default connect(mapStateToProps, mapDispatchToProps)(PostDetailComponent);

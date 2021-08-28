@@ -1,12 +1,12 @@
 import React from "react";
 
-import PostDetailComponent from "../../components/postdetail-component/postdetail.component";
+import PostDetailContainer from "../../containers/postdetail";
 
 
 const PostDetailPage = () => {
   return (
     <div>
-        <PostDetailComponent />
+        <PostDetailContainer />
     </div>
   );
 };

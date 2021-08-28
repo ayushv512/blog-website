@@ -23,6 +23,13 @@ export function SetSelectedCategoryAction(category) {
   };
 }
 
+export function PostDetailGetAction(slug = "") {
+  return async dispatch => {
+    const res = await axios.get(URL.getPostDetailLink(slug));
+    dispatch({ type: Types.GET_POST_DETAIL, payload: res.data });
+  };
+}
+
 export function SetCategoriesColorAction(data) {
   return {
     type: Types.SET_CATEGORIES_COLOR, payload: data
