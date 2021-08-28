@@ -44,7 +44,7 @@ export const getRandomColor = () => {
   const rC = Math.floor(Math.random() * 256);
   const gC = Math.floor(Math.random() * 256);
   const bC = Math.floor(Math.random() * 256);
-  const color = `rgb("${rC},${gC},${bC})`;
+  const color = `rgb(${rC},${gC},${bC})`;
 
   return color;
 };
