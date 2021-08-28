@@ -19,9 +19,9 @@ const AppRouter = () => (
       <>
         <section>
             <Switch>
-              <Route exact path="/home" component={PostsPage} />
-              <Route exact path="/post/:slug" component={PostDetailPage} />
-              <Redirect to="/home" />
+              <Route exact path="/blogs" component={PostsPage} />
+              <Route exact path="/blogs/:slug" component={PostDetailPage} />
+              <Redirect to="/blogs" />
             </Switch>
         </section>
       </>

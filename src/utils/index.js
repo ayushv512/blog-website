@@ -1,5 +1,4 @@
 export const timeDifference = previous => {
-  //TODO: validation for 1 value
   const current = new Date();
   const msPerMinute = 60 * 1000;
   const msPerHour = msPerMinute * 60;
@@ -9,6 +8,7 @@ export const timeDifference = previous => {
 
   const elapsed = current - previous;
 
+  //TODO: validation for singular
   if (elapsed < msPerMinute) {
     return Math.round(elapsed / 1000) + " seconds ago";
   } else if (elapsed < msPerHour) {

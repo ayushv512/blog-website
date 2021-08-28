@@ -1,5 +1,6 @@
 import axios from "axios";
 import * as Types from "../constants/ActionTypes";
+import { URL } from "../constants/index";
 
 export function CategoriesGetAction() {
   return async (dispatch, getState) => {
@@ -8,9 +9,9 @@ export function CategoriesGetAction() {
   };
 }
 
-export function PostGetAction() {
+export function PostGetAction(category = '') {
   return async (dispatch, getState) => {
-    const res = await axios.get("https://public-api.wordpress.com/rest/v1.1/sites/107403796/posts/?fields=slug,categories,post_thumbnail,title,date&number=20&page=1");
+    const res = await axios.get(URL.getPostsLink(category));
     dispatch({ type: Types.GET_POSTS, payload: res.data });
   };
 }
