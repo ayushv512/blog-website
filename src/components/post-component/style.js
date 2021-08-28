@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { themeColors } from '../../config/config';
 
-export const PostComponentWrapper = styled.div`
+export const PostsComponentWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -59,6 +59,10 @@ export const Bullet = styled.div`
    margin-right: 5px;
 `;
 
-export const CategoryLabel = styled.div`
+export const CategoryLabel = styled.div``;
 
+export const PaginationWrapper = styled.div`
+   width: 100%;
+   display: flex;
+   justify-content: center;
 `;

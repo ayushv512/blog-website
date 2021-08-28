@@ -2,7 +2,8 @@ import { GET_POSTS } from '../actions/ActionTypes';
 
 const initialState = {
     loading: false,
-    posts:  null
+    totalCount: 0,
+    posts: null
 }
 
 const posts = (state = initialState, action) => {
@@ -11,6 +12,7 @@ const posts = (state = initialState, action) => {
             return {
                 ...state,
                 loading: true,
+                totalCount: action.payload.found,
                 posts: action.payload.posts
             };
         default:

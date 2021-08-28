@@ -9,15 +9,28 @@ export function CategoriesGetAction() {
   };
 }
 
-export function PostGetAction(category = '') {
-  return async (dispatch) => {
-    const res = await axios.get(URL.getPostsLink(category));
+export function PostGetAction() {
+  return async (dispatch, getState) => {
+    const currentState = getState();
+    const res = await axios.get(URL.getPostsLink(currentState.selectedCategory.selectedCategory, currentState.paginationConfig));
     dispatch({ type: Types.GET_POSTS, payload: res.data });
+  };
+}
+
+export function SetSelectedCategoryAction(category) {
+  return {
+    type: Types.SET_SELECTED_CATEGORY, payload: category
   };
 }
 
 export function SetCategoriesColorAction(data) {
   return {
     type: Types.SET_CATEGORIES_COLOR, payload: data
+  };
+}
+
+export function SetPaginationConfigAction(data) {
+  return {
+    type: Types.SET_PAGINATION_CONFIG, payload: data
   };
 }

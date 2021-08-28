@@ -1,22 +1,39 @@
 import React, { useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import Pagination from "../pagination-component/pagination.component";
+import { timeDifference } from "../../utils";
+import { DEFAULT_PAGE_SIZE, IMAGE_NOT_FOUND_URL } from "../../constants";
 import {
-  PostComponentWrapper,
+  PostsComponentWrapper,
   CategoriesSection,
   Category,
   Bullet,
-  CategoryLabel
+  CategoryLabel,
+  PaginationWrapper
 } from "./style";
-import { timeDifference } from "../../utils";
-import { useHistory } from "react-router-dom";
 
 const PostComponent = props => {
   const history = useHistory();
 
   useEffect(() => {
     if (Object.keys(props.categoriesColor).length) {
-      props.postGetAction();
+      props.postsGetAction();
     }
   }, [props.categoriesColor]);
+
+  const updatePageNumber = (page) => {
+    props.setPaginationConfigAction({
+      pageNumber: page,
+      pageSize: DEFAULT_PAGE_SIZE
+    })
+    props.postsGetAction();
+  }
+
+  const formatDate = date => timeDifference(new Date(date));
+
+  const postCardHandler = (slug) => {
+    history.push("/blogs/" + slug);
+  }
 
   const getCategoriesPills = categories => {
     return (
@@ -34,7 +51,14 @@ const PostComponent = props => {
   };
 
   const PostCard = postItem => {
-    const { post_thumbnail, title, date, slug } = postItem;
+    let { post_thumbnail, title, date, slug } = postItem;
+    if (!post_thumbnail) {
+      post_thumbnail = {
+        ID: Math.random() * 10,
+        URL: IMAGE_NOT_FOUND_URL
+      }
+    }
+
     return (
       <div key={post_thumbnail.ID} className="post-card" onClick={() => postCardHandler(slug)}>
         {getCategoriesPills(postItem.categories)}
@@ -45,19 +69,23 @@ const PostComponent = props => {
     );
   };
 
-  const postCardHandler = (slug) => {
-    history.push("/blogs/" + slug);
-  }
-
-  const formatDate = date => timeDifference(new Date(date));
-
   return (
     props.postsList
-      ? (<PostComponentWrapper>
-        {props.postsList.map(postItem => {
-          return <PostCard key={postItem.post_thumbnail?.ID} {...postItem} />;
-        })}
-      </PostComponentWrapper>)
+      ? (
+        <PostsComponentWrapper>
+          {props.postsList.map(postItem => {
+            return <PostCard key={postItem.post_thumbnail?.ID} {...postItem} />;
+          })}
+          <PaginationWrapper>
+            <Pagination
+              currentPage={props.paginationConfig.pageNumber}
+              totalCount={props.totalPostsCount}
+              pageSize={props.paginationConfig.pageSize}
+              onPageChange={page => updatePageNumber(page)}
+            />
+          </PaginationWrapper>
+        </PostsComponentWrapper>
+      )
       : null
   );
 };
