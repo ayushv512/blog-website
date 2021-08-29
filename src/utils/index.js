@@ -7,20 +7,26 @@ export const timeDifference = previous => {
   const msPerYear = msPerDay * 365;
 
   const elapsed = current - previous;
+  let computedVal;
 
-  //TODO: validation for singular
   if (elapsed < msPerMinute) {
-    return Math.round(elapsed / 1000) + " seconds ago";
+    computedVal = Math.round(elapsed / 1000);
+    return computedVal + (computedVal === 1 ? " second ago" : " seconds ago");
   } else if (elapsed < msPerHour) {
-    return Math.round(elapsed / msPerMinute) + " minutes ago";
+    computedVal = Math.round(elapsed / msPerMinute);
+    return computedVal + (computedVal === 1 ? " minute ago" : " minutes ago");
   } else if (elapsed < msPerDay) {
-    return Math.round(elapsed / msPerHour) + " hours ago";
+    computedVal = Math.round(elapsed / msPerHour);
+    return computedVal + (computedVal === 1 ? " hour ago" : " hours ago");
   } else if (elapsed < msPerMonth) {
-    return Math.round(elapsed / msPerDay) + " days ago";
+    computedVal = Math.round(elapsed / msPerDay);
+    return computedVal + (computedVal === 1 ? " day ago" : " days ago");
   } else if (elapsed < msPerYear) {
-    return Math.round(elapsed / msPerMonth) + " months ago";
+    computedVal = Math.round(elapsed / msPerMonth);
+    return computedVal + (computedVal === 1 ? " month ago" : " months ago");
   } else {
-    return Math.round(elapsed / msPerYear) + " years ago";
+    computedVal = Math.round(elapsed / msPerYear);
+    return computedVal + (computedVal === 1 ? " year ago" : " years ago");
   }
 };
 
