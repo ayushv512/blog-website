@@ -57,7 +57,19 @@ export function SetPaginationConfigAction(data) {
 
 export function PostDetailGetAction(slug = "") {
   return async dispatch => {
+    dispatch({
+      type: Types.GET_POST_DETAIL,
+      payload: {
+        loading: true,
+        data: []
+      }
+    });
     const res = await axios.get(URL.getPostDetailLink(slug));
-    dispatch({ type: Types.GET_POST_DETAIL, payload: res.data });
+    dispatch({
+      type: Types.GET_POST_DETAIL, payload: {
+        loading: false,
+        data: res.data
+      }
+    });
   };
 }

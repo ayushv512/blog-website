@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { PostDetailContainerWrapper, PostDescriptionSection, AuthorDetailsSection, PostDetailContent} from "./style";
+import { PostDetailContainerWrapper, PostDescriptionSection, AuthorDetailsSection, PostDetailContent } from "./style";
 
 import LoadingComponent from "../loading-component/loading-component";
 import { IMAGE_NOT_FOUND_URL } from "../../constants/index";
@@ -16,9 +16,9 @@ const PostDetailComponent = props => {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return props.loading ? (
-    props.postDetail && <PostDetailContainer {...props} />
-  ) : (
     <LoadingComponent />
+  ) : (
+    props.postDetail && <PostDetailContainer {...props} />
   );
 };
 
@@ -32,18 +32,18 @@ const PostDetailContainer = props => {
   } = props.postDetail;
 
   if (!imgSrc) {
-    imgSrc =  IMAGE_NOT_FOUND_URL;
+    imgSrc = IMAGE_NOT_FOUND_URL;
   }
 
-  
+
 
   return (
     <PostDetailContainerWrapper>
-      <img src={imgSrc} height="500" className="featured-image" alt="featured"/>
+      <img src={imgSrc} height="500" className="featured-image" alt="featured" />
       <PostDescriptionSection>
         <div className="title">{title}</div>
         <AuthorDetailsSection>
-          <img className="avatar" src={avatarUrl} alt="avatar"/>
+          <img className="avatar" src={avatarUrl} alt="avatar" />
           <div className="name-date">
             <span className="name">{name}</span>
             <span className="date">{formatDate(date)}</span>

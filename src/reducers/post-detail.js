@@ -10,8 +10,8 @@ const postDetail = (state = initialState, action) => {
         case GET_POST_DETAIL:
             return {
                 ...state,
-                loading: true,
-                post: action.payload
+                loading: action.payload.loading,
+                post: action.payload.data
             };
         default:
             return state;
