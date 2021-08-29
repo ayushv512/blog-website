@@ -18,11 +18,11 @@ const PostDetailComponent = props => {
   return props.loading ? (
     <LoadingComponent />
   ) : (
-    props.postDetail && <PostDetailContainer {...props} />
+    props.postDetail && <PostDetailWrapper {...props} />
   );
 };
 
-const PostDetailContainer = props => {
+const PostDetailWrapper = props => {
   let {
     author: { name, avatar_URL: avatarUrl },
     date,
@@ -34,8 +34,6 @@ const PostDetailContainer = props => {
   if (!imgSrc) {
     imgSrc = IMAGE_NOT_FOUND_URL;
   }
-
-
 
   return (
     <PostDetailContainerWrapper>
