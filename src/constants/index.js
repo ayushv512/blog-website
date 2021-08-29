@@ -1,7 +1,17 @@
-const siteID = "107403796"
+import { base_URL } from "../config";
 
-export const base_URL = "https://public-api.wordpress.com/rest/v1.1/sites/" + siteID + "/";
+// Site ID for Truecaller blog
+export const siteID = "107403796"
 
+// Device widths
+export const deviceWidths = {
+    phoneWidth: '480px',
+    tabletWidth: '768px',
+    tabletLandscapeWidth: '1024px',
+    smallDesktop: '1360px'
+};
+
+// URLs for HTTP calls
 export const URL = {
     getCategories: () => {
         return `${base_URL}categories`;
@@ -17,6 +27,7 @@ export const URL = {
     }
 }
 
+// Dummy image URL
 export const IMAGE_NOT_FOUND_URL = 'https://www.metisgl.com/assets/camaleon_cms/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png';
 
 // Category Default

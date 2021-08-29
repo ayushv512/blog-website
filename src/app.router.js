@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom';
 import { createBrowserHistory as createHistory } from 'history';
 // import LoadingComponent from './components/loading/loading-component';
-//import { routesNav } from './config/config';
+//import { routesNav } from './config';
 
 const PostsPage = lazy(() => import('./pages/posts-page/posts.page'));
 const PostDetailPage = lazy(() => import('./pages/postdetail-page/postdetail.page'));

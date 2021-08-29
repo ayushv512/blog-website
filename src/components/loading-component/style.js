@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { deviceWidths } from '../../config/config';
+import { deviceWidths } from '../../constants';
 
 export const LoaderTheme = styled.div`
      .container {

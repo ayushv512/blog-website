@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { themeColors } from "../../config/config";
+import { themeColors } from "../../config";
 
 export const LandingPageWrapper = styled.div`
   width: 100%;

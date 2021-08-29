@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { themeColors } from "../../config/config";
+import { themeColors } from "../../config";
 import TruecallerBlogImage from "../../assets/images/header.jpg";
 
 export const PostsPageWrapper = styled.div`
