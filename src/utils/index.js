@@ -30,7 +30,7 @@ export const assignColorToCategories = categories => {
     categoriesColor = categories.reduce((categoriesColor, curr_category) => {
       if (!categoriesColor.hasOwnProperty(curr_category.slug)) {
         categoriesColor[curr_category.slug] = {
-          color: getRandomColor(),
+          color: getColor(getStringHash(curr_category.name)),
         }
       }
       return categoriesColor;
@@ -40,10 +40,26 @@ export const assignColorToCategories = categories => {
   return categoriesColor;
 };
 
-export const getRandomColor = () => {
-  const rC = Math.floor(Math.random() * 256);
-  const gC = Math.floor(Math.random() * 256);
-  const bC = Math.floor(Math.random() * 256);
+export const getStringHash = (categoryName) => {
+  let hash = 0;
+  let index;
+  let characacter;
+  if (categoryName.length === 0) {
+    return hash
+  };
+  for (index = 0; index < categoryName.length; ++index) {
+    characacter = categoryName.charCodeAt(index);
+    hash = ((hash << 5) - hash) + characacter;
+    hash |= 0;
+  }
+
+  return hash;
+};
+
+export const getColor = (hash) => {
+  const rC = Math.floor(Math.abs(hash) * 3 % 256);
+  const gC = Math.floor(Math.abs(hash) % 256);
+  const bC = Math.floor(Math.abs(hash) * 2 % 256);
   const color = `rgb(${rC},${gC},${bC})`;
 
   return color;
