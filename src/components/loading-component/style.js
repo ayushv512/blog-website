@@ -12,7 +12,7 @@ export const LoaderTheme = styled.div`
         height: 20px;
         width: 250px;
         position: absolute;
-        top: 5%;
+        top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
         bottom: 0;
