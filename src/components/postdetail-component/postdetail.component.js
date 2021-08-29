@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { PostDetailContainerWrapper, PostDescriptionSection, AuthorDetailsSection, PostDetailContent } from "./style";
 
 import LoadingComponent from "../loading-component/loading-component";
@@ -8,17 +8,24 @@ import { formatDate } from "../../utils";
 
 const PostDetailComponent = props => {
   const history = useHistory();
+  const { slug } = useParams();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    const slug = history.location.pathname.split("/")[2];
     props.postDetailGetAction(slug);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    if (props.postDetail === 'error') {
+      // route to home blogs page
+      history.push("/blogs");
+    }
+  }, [props.postDetail]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return props.loading ? (
     <LoadingComponent />
   ) : (
-    props.postDetail && <PostDetailWrapper {...props} />
+    props.postDetail && props.postDetail !== 'error' && <PostDetailWrapper {...props} />
   );
 };
 

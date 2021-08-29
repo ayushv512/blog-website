@@ -61,15 +61,24 @@ export function PostDetailGetAction(slug = "") {
       type: Types.GET_POST_DETAIL,
       payload: {
         loading: true,
-        data: []
+        data: null
       }
     });
-    const res = await axios.get(URL.getPostDetailLink(slug));
-    dispatch({
-      type: Types.GET_POST_DETAIL, payload: {
-        loading: false,
-        data: res.data
-      }
-    });
+    try {
+      const res = await axios.get(URL.getPostDetailLink(slug))
+      dispatch({
+        type: Types.GET_POST_DETAIL, payload: {
+          loading: false,
+          data: res.data
+        }
+      });
+    } catch (error) {
+      dispatch({
+        type: Types.GET_POST_DETAIL, payload: {
+          loading: false,
+          data: error
+        }
+      });
+    }
   };
 }

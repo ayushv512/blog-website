@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { themeColors } from '../../config';
 
-export const PaginationContainer=styled.ul`
+export const PaginationContainer = styled.ul`
     display: flex;
     list-style-type: none;
     .pagination-item {
@@ -25,6 +25,7 @@ export const PaginationContainer=styled.ul`
     }
     .pagination-item:hover {
         background-color: ${themeColors.pagination};
+        opacity: 0.5;
         cursor: pointer;
         color: ${themeColors.white};
     }

@@ -5,7 +5,9 @@ import TruecallerLogo from "../../assets/logotype/truecaller.svg";
 const HeaderComponent = () => {
   return (
     <HeaderComponentWrapper>
-      <img src={TruecallerLogo} width="140" height="35" alt="truecaller logo" />
+      <a href="/blogs">
+        <img src={TruecallerLogo} width="140" height="35" alt="truecaller logo" />
+      </a>
     </HeaderComponentWrapper>
   );
 };

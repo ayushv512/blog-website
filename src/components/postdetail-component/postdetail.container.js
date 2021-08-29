@@ -5,7 +5,7 @@ import PostDetailComponent from "./postdetail.component";
 
 const mapStateToProps = state => ({
   loading: state.postDetail.loading,
-  postDetail: state.postDetail.post
+  postDetail: state.postDetail.post instanceof Error ? 'error' : state.postDetail.post
 });
 
 const mapDispatchToProps = dispatch => ({
