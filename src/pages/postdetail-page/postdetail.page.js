@@ -5,9 +5,7 @@ import PostDetailContainer from "../../components/postdetail-component/postdetai
 
 const PostDetailPage = () => {
   return (
-    <div>
-        <PostDetailContainer />
-    </div>
+    <PostDetailContainer />
   );
 };
 

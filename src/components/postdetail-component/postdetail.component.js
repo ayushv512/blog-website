@@ -4,6 +4,7 @@ import { PostDetailContainerWrapper, PostDescriptionSection, AuthorDetailsSectio
 
 import LoadingComponent from "../loading-component/loading-component";
 import { IMAGE_NOT_FOUND_URL } from "../../constants/index";
+import { formatDate } from "../../utils";
 
 const PostDetailComponent = props => {
   const history = useHistory();
@@ -34,15 +35,7 @@ const PostDetailContainer = props => {
     imgSrc =  IMAGE_NOT_FOUND_URL;
   }
 
-  const formatDate = date => {
-    const day = new Date(date).getDate();
-    const year = new Date(date).getFullYear();
-    const monthNames = ["Jan", "Feb", "March", "April", "May","June","July", "Aug", "Sept", "Oct", "Nov","Dec"];
-    const ordinal = (date) => (date > 20 || date < 10) ? ([false, "st", "nd", "rd"])[(date%10)] || "th" : "th";
-    const month = monthNames[new Date(date).getMonth()]
-    const formattedDate = month + ' '+ day +  ordinal(new Date(date).getDate()) + ',' + year;
-    return formattedDate;
-  };
+  
 
   return (
     <PostDetailContainerWrapper>

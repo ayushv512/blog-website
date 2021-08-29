@@ -48,3 +48,14 @@ export const getRandomColor = () => {
 
   return color;
 };
+
+export const formatDate = date => {
+  const day = new Date(date).getDate();
+  const year = new Date(date).getFullYear();
+  const monthNames = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
+  const ordinal = (date) => (date > 20 || date < 10) ? ([false, "st", "nd", "rd"])[(date % 10)] || "th" : "th";
+  const month = monthNames[new Date(date).getMonth()]
+  const formattedDate = `${month} ${day + ordinal(new Date(date).getDate())},${year}`;
+
+  return formattedDate;
+};
