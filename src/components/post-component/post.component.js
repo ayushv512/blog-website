@@ -7,6 +7,7 @@ import { DEFAULT_PAGE_SIZE, IMAGE_NOT_FOUND_URL } from "../../constants";
 import {
   PostsComponentWrapper,
   PostsCardWrapper,
+  PostsCardImg,
   PostsCardTitle,
   PostsCardDate,
   CategoriesSection,
@@ -77,7 +78,7 @@ const PostComponent = props => {
         onClick={() => postCardHandler(slug)}
       >
         {getCategoriesPills(postItem.categories)}
-        <img src={post_thumbnail.URL} width="340" height="200" alt="post thumbnail" />
+        <PostsCardImg src={post_thumbnail.URL} alt="post thumbnail"></PostsCardImg>
         <PostsCardTitle> {title} </PostsCardTitle>
         <PostsCardDate>
           {formatDate(date)}

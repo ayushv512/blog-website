@@ -1,8 +1,5 @@
 import { base_URL } from "../config";
 
-// Site ID for Truecaller blog
-export const siteID = "107403796"
-
 // Device widths
 export const deviceWidths = {
     phoneWidth: '480px',

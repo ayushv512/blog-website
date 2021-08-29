@@ -1,6 +1,13 @@
 import React, { useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import { PostDetailContainerWrapper, PostDescriptionSection, AuthorDetailsSection, PostDetailContent } from "./style";
+import {
+  PostDetailContainerWrapper,
+  PostDescriptionSection,
+  AuthorDetailsSection,
+  PostDetailContent,
+  PostDetailImage,
+  PostDetailTitle
+} from "./style";
 
 import LoadingComponent from "../loading-component/loading-component";
 import { IMAGE_NOT_FOUND_URL } from "../../constants/index";
@@ -16,7 +23,7 @@ const PostDetailComponent = props => {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
-    if (props.postDetail === 'error') {
+    if (props.postDetail === "error") {
       // route to home blogs page
       history.push("/blogs");
     }
@@ -25,7 +32,9 @@ const PostDetailComponent = props => {
   return props.loading ? (
     <LoadingComponent />
   ) : (
-    props.postDetail && props.postDetail !== 'error' && <PostDetailWrapper {...props} />
+    props.postDetail && props.postDetail !== "error" && (
+      <PostDetailWrapper {...props} />
+    )
   );
 };
 
@@ -44,9 +53,9 @@ const PostDetailWrapper = props => {
 
   return (
     <PostDetailContainerWrapper>
-      <img src={imgSrc} height="500" className="featured-image" alt="featured" />
+      <PostDetailImage src={imgSrc} alt="featured"></PostDetailImage>
       <PostDescriptionSection>
-        <div className="title">{title}</div>
+        <PostDetailTitle className="title">{title}</PostDetailTitle>
         <AuthorDetailsSection>
           <img className="avatar" src={avatarUrl} alt="avatar" />
           <div className="name-date">

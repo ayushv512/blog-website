@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { themeColors } from '../../config';
+import { deviceWidths } from "../../constants";
 
 export const PaginationContainer = styled.ul`
     display: flex;
@@ -58,5 +59,9 @@ export const PaginationContainer = styled.ul`
     .pagination-item.disabled:hover {
         background-color: transparent;
         cursor: default;
-      }
+    }
+
+    @media (max-width: ${deviceWidths.phoneWidth}) {
+        padding: 0px;
+    }
 `;

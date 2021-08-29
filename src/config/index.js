@@ -1,4 +1,5 @@
-import { siteID } from "../constants";
+// Site ID for Truecaller blog
+export const siteID = "107403796"
 
 // Theme colors for the website
 export const themeColors = {

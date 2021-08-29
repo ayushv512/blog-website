@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { themeColors } from '../../config';
+import { deviceWidths } from "../../constants";
 
 export const PostsComponentWrapper = styled.div`
   width: 100%;
@@ -15,6 +16,25 @@ export const PostsCardWrapper = styled.div`
    background-color: ${themeColors.white};
    box-shadow: 0 2px 2px rgb(0 0 0 / 0.1);
    cursor: pointer;
+
+   @media (max-width: ${deviceWidths.tabletWidth}) {
+      width: 100%;
+      margin: 15px 0;
+   }
+`;
+
+export const PostsCardImg = styled.img`
+    width: 340px;
+    height: 200px;
+
+    @media (max-width: ${deviceWidths.tabletWidth}) {
+      width: 100%;
+      height: 300px;
+    }
+
+    @media (max-width: ${deviceWidths.phoneWidth}) {
+      height: 200px;
+    }
 `;
 
 export const PostsCardTitle = styled.div`
@@ -31,12 +51,20 @@ export const PostsCardTitle = styled.div`
    -webkit-line-clamp: 2;
    overflow: hidden;
    text-overflow: ellipsis;
+
+   @media (max-width: ${deviceWidths.tabletWidth}) {
+      margin: 10px 15px;
+   }
 `;
 
 export const PostsCardDate = styled.div`
    margin: 10px 25px;
    color: ${themeColors.date};
    font-weight: 500;
+
+   @media (max-width: ${deviceWidths.tabletWidth}) {
+      margin: 10px 15px;
+   }
 `;
 
 export const CategoriesSection = styled.div`
