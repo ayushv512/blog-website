@@ -87,8 +87,9 @@ const PostComponent = props => {
   };
 
   return props.loading
-    ? (<LoadingComponent />)
-    : (props.postsList &&
+    ? (
+      <LoadingComponent />
+    ) : (props.postsList &&
       (
         <PostsComponentWrapper>
           {props.postsList.map((postItem, index) => {
