@@ -11,9 +11,9 @@ const posts = (state = initialState, action) => {
         case GET_POSTS:
             return {
                 ...state,
-                loading: true,
-                totalCount: action.payload.found,
-                posts: action.payload.posts
+                loading: action.payload.loading,
+                totalCount: action.payload.data.found,
+                posts: action.payload.data.posts
             };
         default:
             return state;

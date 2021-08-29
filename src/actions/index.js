@@ -11,6 +11,13 @@ export function CategoriesGetAction() {
 
 export function PostGetAction() {
   return async (dispatch, getState) => {
+    dispatch({
+      type: Types.GET_POSTS,
+      payload: {
+        loading: true,
+        data: []
+      }
+    });
     const currentState = getState();
     const res = await axios.get(
       URL.getPostsLink(
@@ -18,7 +25,12 @@ export function PostGetAction() {
         currentState.paginationConfig
       )
     );
-    dispatch({ type: Types.GET_POSTS, payload: res.data });
+    dispatch({
+      type: Types.GET_POSTS, payload: {
+        loading: false,
+        data: res.data
+      }
+    });
   };
 }
 

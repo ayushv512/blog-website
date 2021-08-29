@@ -77,7 +77,7 @@ const PostComponent = props => {
         onClick={() => postCardHandler(slug)}
       >
         {getCategoriesPills(postItem.categories)}
-        <img src={post_thumbnail.URL} width="340" height="200" alt="post thumbnail"/>
+        <img src={post_thumbnail.URL} width="340" height="200" alt="post thumbnail" />
         <PostsCardTitle> {title} </PostsCardTitle>
         <PostsCardDate>
           {formatDate(date)}
@@ -86,25 +86,25 @@ const PostComponent = props => {
     );
   };
 
-  return props.loading ? (
-    props.postsList && (
-      <PostsComponentWrapper>
-        {props.postsList.map((postItem, index) => {
-          return <PostCard {...postItem} key={index}/>;
-        })}
-        <PaginationWrapper>
-          <Pagination
-            currentPage={props.paginationConfig.pageNumber}
-            totalCount={props.totalPostsCount}
-            pageSize={props.paginationConfig.pageSize}
-            onPageChange={page => updatePageNumber(page)}
-          />
-        </PaginationWrapper>
-      </PostsComponentWrapper>
-    )
-  ) : (
-    <LoadingComponent />
-  );
+  return props.loading
+    ? (<LoadingComponent />)
+    : (props.postsList &&
+      (
+        <PostsComponentWrapper>
+          {props.postsList.map((postItem, index) => {
+            return <PostCard {...postItem} key={index} />;
+          })}
+          <PaginationWrapper>
+            <Pagination
+              currentPage={props.paginationConfig.pageNumber}
+              totalCount={props.totalPostsCount}
+              pageSize={props.paginationConfig.pageSize}
+              onPageChange={page => updatePageNumber(page)}
+            />
+          </PaginationWrapper>
+        </PostsComponentWrapper>
+      )
+    );
 };
 
 export default PostComponent;
