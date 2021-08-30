@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import LoadingComponent from "../../components/loading-component/loading-component";
 import Pagination from "../pagination-component/pagination.component";
 import { timeDifference } from "../../utils";
 import { DEFAULT_PAGE_SIZE, IMAGE_NOT_FOUND_URL } from "../../constants";
@@ -16,12 +15,15 @@ import {
   CategoryLabel,
   PaginationWrapper
 } from "./style";
+import PropTypes from "prop-types";
+import SkeletonLoader from "../skeleton-loader/skeletonloader";
 
 const PostComponent = props => {
   const history = useHistory();
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    props.initPostDetailAction();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
@@ -78,35 +80,45 @@ const PostComponent = props => {
         onClick={() => postCardHandler(slug)}
       >
         {getCategoriesPills(postItem.categories)}
-        <PostsCardImg src={post_thumbnail.URL} alt="post thumbnail"></PostsCardImg>
-        <PostsCardTitle> {title} </PostsCardTitle>
-        <PostsCardDate>
-          {formatDate(date)}
-        </PostsCardDate>
+        <PostsCardImg
+          src={post_thumbnail.URL}
+          alt="post thumbnail"
+        ></PostsCardImg>
+        <PostsCardTitle
+          dangerouslySetInnerHTML={{ __html: title }}
+        ></PostsCardTitle>
+        <PostsCardDate>{formatDate(date)}</PostsCardDate>
       </PostsCardWrapper>
     );
   };
 
-  return props.loading
-    ? (
-      <LoadingComponent />
-    ) : (props.postsList &&
-      (
-        <PostsComponentWrapper>
-          {props.postsList.map((postItem, index) => {
-            return <PostCard {...postItem} key={index} />;
-          })}
-          <PaginationWrapper>
-            <Pagination
-              currentPage={props.paginationConfig.pageNumber}
-              totalCount={props.totalPostsCount}
-              pageSize={props.paginationConfig.pageSize}
-              onPageChange={page => updatePageNumber(page)}
-            />
-          </PaginationWrapper>
-        </PostsComponentWrapper>
-      )
-    );
+  return props.loading ? (
+    <SkeletonLoader whichPage="posts" />
+  ) : (
+    props.postsList && (
+      <PostsComponentWrapper>
+        {props.postsList.map((postItem, index) => {
+          return <PostCard {...postItem} key={index} />;
+        })}
+        <PaginationWrapper>
+          <Pagination
+            currentPage={props.paginationConfig.pageNumber}
+            totalCount={props.totalPostsCount}
+            pageSize={props.paginationConfig.pageSize}
+            onPageChange={page => updatePageNumber(page)}
+          />
+        </PaginationWrapper>
+      </PostsComponentWrapper>
+    )
+  );
+};
+
+PostComponent.propTypes = {
+  loading: PropTypes.bool,
+  postsList: PropTypes.array,
+  totalPostsCount: PropTypes.number,
+  categoriesColor: PropTypes.object,
+  paginationConfig: PropTypes.object
 };
 
 export default PostComponent;

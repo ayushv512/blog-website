@@ -19,7 +19,14 @@ export const GoToHomeButton = styled.button`
     background-color: ${themeColors.footer};
     color: ${themeColors.white};
     text-transform: uppercase;
-    height: 40px;
     border-radius: 20px;
-    padding: 10px;
+    padding: 12px;
+    cursor: pointer;
+    border: none;
+    opacity: 0.8;
+  
+    &:hover {
+        opacity: 1;
+    }
+
 `;

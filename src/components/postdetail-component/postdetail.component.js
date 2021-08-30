@@ -12,6 +12,8 @@ import {
 import LoadingComponent from "../loading-component/loading-component";
 import { IMAGE_NOT_FOUND_URL } from "../../constants/index";
 import { formatDate } from "../../utils";
+import PropTypes from "prop-types";
+import SkeletonLoader from "../skeleton-loader/skeletonloader";
 
 const PostDetailComponent = props => {
   const history = useHistory();
@@ -24,13 +26,14 @@ const PostDetailComponent = props => {
 
   useEffect(() => {
     if (props.postDetail === "error") {
-      // route to page not foundß
+      // route to page not found
       history.push("/page-not-found");
     }
   }, [props.postDetail]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return props.loading ? (
-    <LoadingComponent />
+    //<LoadingComponent />
+    <SkeletonLoader whichPage="post-details" />
   ) : (
     props.postDetail && props.postDetail !== "error" && (
       <PostDetailWrapper {...props} />
@@ -55,7 +58,10 @@ const PostDetailWrapper = props => {
     <PostDetailContainerWrapper>
       <PostDetailImage src={imgSrc} alt="featured"></PostDetailImage>
       <PostDescriptionSection>
-        <PostDetailTitle className="title">{title}</PostDetailTitle>
+        <PostDetailTitle
+          className="title"
+          dangerouslySetInnerHTML={{ __html: title }}
+        ></PostDetailTitle>
         <AuthorDetailsSection>
           <img className="avatar" src={avatarUrl} alt="avatar" />
           <div className="name-date">
@@ -69,6 +75,11 @@ const PostDetailWrapper = props => {
       </PostDescriptionSection>
     </PostDetailContainerWrapper>
   );
+};
+
+PostDetailComponent.propTypes = {
+  loading: PropTypes.bool,
+  postDetail: PropTypes.object
 };
 
 export default PostDetailComponent;

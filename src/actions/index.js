@@ -1,6 +1,7 @@
 import axios from "axios";
 import * as Types from "./ActionTypes";
 import { URL } from "../constants/index";
+import { ORDER_BY, ORDER } from "../config/index";
 
 export function CategoriesGetAction() {
   return async dispatch => {
@@ -22,11 +23,14 @@ export function PostGetAction() {
     const res = await axios.get(
       URL.getPostsLink(
         currentState.selectedCategory.selectedCategory,
-        currentState.paginationConfig
+        currentState.paginationConfig,
+        ORDER_BY,
+        ORDER
       )
     );
     dispatch({
-      type: Types.GET_POSTS, payload: {
+      type: Types.GET_POSTS,
+      payload: {
         loading: false,
         data: res.data
       }
@@ -65,20 +69,32 @@ export function PostDetailGetAction(slug = "") {
       }
     });
     try {
-      const res = await axios.get(URL.getPostDetailLink(slug))
+      const res = await axios.get(URL.getPostDetailLink(slug));
       dispatch({
-        type: Types.GET_POST_DETAIL, payload: {
+        type: Types.GET_POST_DETAIL,
+        payload: {
           loading: false,
           data: res.data
         }
       });
     } catch (error) {
       dispatch({
-        type: Types.GET_POST_DETAIL, payload: {
+        type: Types.GET_POST_DETAIL,
+        payload: {
           loading: false,
           data: error
         }
       });
+    }
+  };
+}
+
+export function InitPostDetailAction() {
+  return {
+    type: Types.GET_POST_DETAIL,
+    payload: {
+      loading: false,
+      data: null
     }
   };
 }

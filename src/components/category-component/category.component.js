@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { CategoryComponentWrapper } from './style';
 import { assignColorToCategories } from "../../utils";
 import { DEFAULT_CATEGORY, DEFAULT_PAGE_SIZE, DEFAULT_PAGE_NUMBER } from "../../constants";
+import PropTypes from 'prop-types';
 
 const CategoryComponent = props => {
 
@@ -49,6 +50,11 @@ const CategoryComponent = props => {
       )
       : null
   );
+};
+
+CategoryComponent.propTypes = {
+  categoriesList: PropTypes.array,
+  selectedCategory: PropTypes.string
 };
 
 export default CategoryComponent;

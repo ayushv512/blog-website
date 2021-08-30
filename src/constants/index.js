@@ -13,11 +13,11 @@ export const URL = {
     getCategories: () => {
         return `${base_URL}categories`;
     },
-    getPostsLink: (category, paginationConfig) => {
+    getPostsLink: (category, paginationConfig, orderBy, order) => {
         const { pageSize, pageNumber } = paginationConfig;
         return category === 'all-categories'
-            ? `${base_URL}posts/?fields=slug,categories,post_thumbnail,title,date&number=${pageSize}&page=${pageNumber}`
-            : `${base_URL}posts/?category=${category}&fields=slug,categories,post_thumbnail,title,date&number=${pageSize}&page=${pageNumber}`
+            ? `${base_URL}posts/?fields=slug,categories,post_thumbnail,title,date&number=${pageSize}&page=${pageNumber}&order_by=${orderBy}&order=${order}`
+            : `${base_URL}posts/?category=${category}&fields=slug,categories,post_thumbnail,title,date&number=${pageSize}&page=${pageNumber}&order_by=date&order=DESC`
     },
     getPostDetailLink: (slug) => {
         return `${base_URL}posts/slug:${slug}?fields=featured_image,title,author,content,date`;

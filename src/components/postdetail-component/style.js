@@ -79,6 +79,24 @@ export const AuthorDetailsSection = styled.div`
 export const PostDetailContent = styled.div`
   margin: 25px 0;
   img {
-    max-width: -webkit-fill-available !important;
+    display: flex;
+    margin: 0 auto;
+    max-width: fit-content; 
+    max-width: -webkit-fill-available;
+    max-width: -moz-available;
+    height: auto;
+  }
+  .wp-block-embed {
+    margin: 0px;
+  }
+  .wp-block-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  iframe {
+    width: -webkit-fill-available;
+    width: -moz-available;
   }
 `;

@@ -14,14 +14,9 @@ export const PostsPageWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-position: center;
+    background-position: top;
   }
 
-  .blog-img {
-    width: 100vw;
-    height: 550px;
-    object-fit: cover;
-  }
   @media (max-width:${deviceWidths.phoneWidth}) {
     .img-container {
       font-size: 30px;

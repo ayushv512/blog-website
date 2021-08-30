@@ -12,7 +12,7 @@ export const PostsComponentWrapper = styled.div`
 export const PostsCardWrapper = styled.div`
    width: 340px;
    margin: 20px 0;
-   border: 1px solid #f5f5f5;
+   border: 1px solid ${themeColors.border};
    background-color: ${themeColors.white};
    box-shadow: 0 2px 2px rgb(0 0 0 / 0.1);
    cursor: pointer;

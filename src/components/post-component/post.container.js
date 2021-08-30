@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { PostGetAction, SetPaginationConfigAction } from "../../actions";
+import { PostGetAction, SetPaginationConfigAction, InitPostDetailAction } from "../../actions";
 import PostComponent from "./post.component";
 
 const mapStateToProps = state => ({
@@ -13,7 +13,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   postsGetAction: bindActionCreators(PostGetAction, dispatch),
-  setPaginationConfigAction: bindActionCreators(SetPaginationConfigAction, dispatch)
+  setPaginationConfigAction: bindActionCreators(SetPaginationConfigAction, dispatch),
+  initPostDetailAction: bindActionCreators(InitPostDetailAction, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostComponent);

@@ -3,8 +3,8 @@ import { deviceWidths } from '../../constants';
 
 export const LoaderTheme = styled.div`
      .container {
-        height: 100vh;
         width: 100vw;
+        height: 500px;
         position: relative;
       }
       
@@ -100,6 +100,8 @@ export const LoaderTheme = styled.div`
       }
 
     @media (max-width:${deviceWidths.phoneWidth}) {
-       
+      .container {
+        height: 200px;
+      }
     }
 `;
