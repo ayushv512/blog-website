@@ -63,8 +63,8 @@ $ npm run start
 2. If the thumbnail image is not coming from the API, IMAGE_NOT_FOUND dummy image is shown on both pages. 
 3. For Posts List API, orderBy, order, pageSize paramters are hard-coded.
 
-##Tested on 
+## Tested on 
 1. Browsers - Chrome, Safari and Firefox
 2. Devices - iPhone 6/7/8 Plus, iPhone 6/7/8, iPad, Pixel and OnePlus 
 
-##Screenshots
+## Screenshots
