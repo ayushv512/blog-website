@@ -40,7 +40,6 @@ const CategoryComponent = props => {
   return props.categoriesList ? (
     <CategoryComponentWrapper>
       <select
-        className="category-filter-dropdown"
         onChange={e => categoryFilterChangeHandler(e)}
         defaultValue={props.selectedCategory || DEFAULT_CATEGORY}
       >

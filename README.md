@@ -38,7 +38,7 @@ $ npm run start
 
 
 ## Application flow
-1. The user lands on the Landing page i.e Posts List page by default. The first API which gets called is **Categories API** with default ```all-categories``` parameters to fetch list of categories.
+1. The user lands on the Landing page i.e. Posts List page by default. The first API which gets called is **Categories API** with default ```all-categories``` parameters to fetch list of categories.
 2. If the catergory list is available then **Posts List API** call is called with default query parameters of ```page number```, ```page size```, ```order by``` (date) & ```order``` (DESC). 
 3. In the posts list page, the user can filter the posts with the category filter. For filtering **Posts List API** is called again with ```category``` query parameters.
 4. The user can also navigate the posts list with the help of pagination. For pagination **Posts List API** is called again with respective ```page number``` parameter.
@@ -59,10 +59,10 @@ $ npm run start
 5. The application is **Responsive** which is developed using Media Queries (Breakpoints - 1360px, 1024px, 768px, 480px) and CSS Flexbox. 
  
 ## Assumptions
-1. Refreshing the posts list page will reset the filters to default value i.e ```all-categories```.
+1. Refreshing the posts list page will reset the filters to default value i.e. ```all-categories```.
 2. If the thumbnail image is not coming from the API, IMAGE_NOT_FOUND dummy image is shown on both pages. 
 3. For Posts List API, orderBy, order, pageSize paramters are hard-coded.
-4. Header Logo click navigates to root url i.e posts list page.
+4. Header Logo click navigates to root URL i.e. posts list page.
 
 ## Tested on 
 1. Browsers - Chrome, Safari and Firefox
