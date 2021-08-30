@@ -1,4 +1,4 @@
-# The Trucaller Blog 
+# The Truecaller Blog 
 
 ## Development stack
 1. React (using React Hooks) - 17.0.2 
@@ -22,7 +22,7 @@ $ npm run start
 ```
 
 ## Folder Structure Overview
-**src** - App Source files.
+1. **src** - App Source files.
     1. **index.js**: The entry point file for the application. It renders the main <App> component.
     2. **App.js**: The main application component.
     3. **index.css**: Styles for the complete application.
@@ -38,33 +38,33 @@ $ npm run start
 
 
 ## Application flow
-    1. The user lands on the Landing page i.e Posts List page by default. The first API which gets called is **Categories API** with default ```all-categories``` parameters to fetch list of categories.
-    2. If the catergory list is available then **Posts List API** call is called with default query parameters of ```page number```, ```page size```, ```order by``` (date) & ```order``` (DESC). 
-    3. In the posts list page, the user can filter the posts with the category filter. For filtering **Posts List API** is called again with ```category``` query parameters.
-    4. The user can also navigate the posts list with the help of pagination. For pagination **Posts List API** is called again with respective ```page number``` parameter.
-    5. Posts are clickable and on click of each post it redirects to their respective post details page. In the post detail page, **Post Details API** gets called by taking ```slug``` from the URL params. 
-    6. If in case the user routes to a garbage route, the application redirects to 404 NOT FOUND page. 
+1. The user lands on the Landing page i.e Posts List page by default. The first API which gets called is **Categories API** with default ```all-categories``` parameters to fetch list of categories.
+2. If the catergory list is available then **Posts List API** call is called with default query parameters of ```page number```, ```page size```, ```order by``` (date) & ```order``` (DESC). 
+3. In the posts list page, the user can filter the posts with the category filter. For filtering **Posts List API** is called again with ```category``` query parameters.
+4. The user can also navigate the posts list with the help of pagination. For pagination **Posts List API** is called again with respective ```page number``` parameter.
+5. Posts are clickable and on click of each post it redirects to their respective post details page. In the post detail page, **Post Details API** gets called by taking ```slug``` from the URL params. 
+6. If in case the user routes to a garbage route, the application redirects to 404 NOT FOUND page. 
 
 ## Solution Approach
-    1. The website is using Redux to handle the application state. In the Redux the following state are maintained:
-        1. categoriesList - List of categories and loading state 
-        2. postsList - List of posts and loading state 
-        3. selectedCategory - Selected Category from Category dropdown. Default value - ```all-categories``` 
-        4. categoriesColorList - Categories mapped with their respective colors. 
-        5. paginationConfig - Page number and Page size to maintain state of pagination. Default value - pageNumber: ```1``` & pageSize: ```20```
-        6. postDetail - Single post detail and loading state 
-    2. Router is implemented to navigate with Post and Post Details pages. Default route is post page route -  ```/blogs``` and Post detail page route is - ```/blogs/{slug}```
-    3. Pagination is implemented with left and right arrows to navigate the list of posts.
-    4. Skeleton loader is shown till the time data loads for both the pages. 
-    5. The application is responsive which is developed using Media Queries (Breakpoints - 1360px, 1024px, 768px, 480px) and CSS Flexbox. 
+1. The website is using Redux to handle the application state. In the Redux the following state are maintained:
+    1. categoriesList - List of categories and loading state 
+    2. postsList - List of posts and loading state 
+    3. selectedCategory - Selected Category from Category dropdown. Default value - ```all-categories``` 
+    4. categoriesColorList - Categories mapped with their respective colors. 
+    5. paginationConfig - Page number and Page size to maintain state of pagination. Default value - pageNumber: ```1``` & pageSize: ```20```
+    6. postDetail - Single post detail and loading state 
+2. Router is implemented to navigate with Post and Post Details pages. Default route is post page route -  ```/blogs``` and Post detail page route is - ```/blogs/{slug}```
+3. Pagination is implemented with left and right arrows to navigate the list of posts.
+4. Skeleton loader is shown till the time data loads for both the pages. 
+5. The application is responsive which is developed using Media Queries (Breakpoints - 1360px, 1024px, 768px, 480px) and CSS Flexbox. 
  
 ## Assumptions
-    1. Refreshing the posts list page will reset the filters to default value i.e ```all-categories``` .
-    2. If the thumbnail image is not coming from the API, IMAGE_NOT_FOUND dummy image is shown on both pages. 
-    3. For Posts List API, orderBy, order, pageSize paramters are hard-coded.
+1. Refreshing the posts list page will reset the filters to default value i.e ```all-categories``` .
+2. If the thumbnail image is not coming from the API, IMAGE_NOT_FOUND dummy image is shown on both pages. 
+3. For Posts List API, orderBy, order, pageSize paramters are hard-coded.
 
 ##Tested on 
-Browsers - Chrome, Safari and Firefox
-Devices - iPhone 6/7/8 Plus, iPhone 6/7/8, iPad, Pixel and OnePlus 
+    Browsers - Chrome, Safari and Firefox
+    Devices - iPhone 6/7/8 Plus, iPhone 6/7/8, iPad, Pixel and OnePlus 
 
 ##Screenshots
