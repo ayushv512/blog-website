@@ -5,8 +5,12 @@ import { ORDER_BY, ORDER } from "../config/index";
 
 export function CategoriesGetAction() {
   return async dispatch => {
-    const res = await axios.get(URL.getCategories());
-    dispatch({ type: Types.GET_CATEGORIES, payload: res.data });
+    try {
+      const res = await axios.get(URL.getCategories());
+      dispatch({ type: Types.GET_CATEGORIES, payload: res.data });
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+    }
   };
 }
 
@@ -19,22 +23,26 @@ export function PostGetAction() {
         data: []
       }
     });
-    const currentState = getState();
-    const res = await axios.get(
-      URL.getPostsLink(
-        currentState.selectedCategory.selectedCategory,
-        currentState.paginationConfig,
-        ORDER_BY,
-        ORDER
-      )
-    );
-    dispatch({
-      type: Types.GET_POSTS,
-      payload: {
-        loading: false,
-        data: res.data
-      }
-    });
+    try {
+      const currentState = getState();
+      const res = await axios.get(
+        URL.getPostsLink(
+          currentState.selectedCategory.selectedCategory,
+          currentState.paginationConfig,
+          ORDER_BY,
+          ORDER
+        )
+      );
+      dispatch({
+        type: Types.GET_POSTS,
+        payload: {
+          loading: false,
+          data: res.data
+        }
+      });
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+    }
   };
 }
 

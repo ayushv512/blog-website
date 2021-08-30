@@ -6,7 +6,11 @@ import {
   AuthorDetailsSection,
   PostDetailContent,
   PostDetailImage,
-  PostDetailTitle
+  PostDetailTitle,
+  AuthorDetailsImg,
+  AuthorNameDateContainer,
+  AuthorName,
+  AuthorDate
 } from "./style";
 
 import { IMAGE_NOT_FOUND_URL } from "../../constants/index";
@@ -58,15 +62,14 @@ const PostDetailWrapper = props => {
       <PostDetailImage src={imgSrc} alt="featured"></PostDetailImage>
       <PostDescriptionSection>
         <PostDetailTitle
-          className="title"
           dangerouslySetInnerHTML={{ __html: title }}
         ></PostDetailTitle>
         <AuthorDetailsSection>
-          <img className="avatar" src={avatarUrl} alt="avatar" />
-          <div className="name-date">
-            <span className="name">{name}</span>
-            <span className="date">{formatDate(date)}</span>
-          </div>
+          <AuthorDetailsImg src={avatarUrl} alt="avatar"></AuthorDetailsImg>
+          <AuthorNameDateContainer>
+            <AuthorName>{name}</AuthorName>
+            <AuthorDate>{formatDate(date)}</AuthorDate>
+          </AuthorNameDateContainer>
         </AuthorDetailsSection>
         <PostDetailContent
           dangerouslySetInnerHTML={{ __html: content }}

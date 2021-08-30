@@ -51,28 +51,31 @@ export const AuthorDetailsSection = styled.div`
   display: flex;
   margin: 25px 0;
   align-items: center;
-  .avatar {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    margin-right: 20px;
-  }
+`;
 
-  .name-date {
-    display: flex;
-    flex-direction: column;
-    .name {
-      font-size: 16px;
-      line-height: 1.3;
-      font-weight: 600;
-      color: ${themeColors.title};
-    }
-    .date {
-      color: ${themeColors.date};
-      font-size: 14px;
-      font-weight: 500;
-    }
-  }
+export const AuthorDetailsImg = styled.img`
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 20px;
+`;
+
+export const AuthorNameDateContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const AuthorName = styled.span`
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 600;
+  color: ${themeColors.title};
+`;
+
+export const AuthorDate = styled.span`
+  color: ${themeColors.date};
+  font-size: 14px;
+  font-weight: 500;
 `;
 
 export const PostDetailContent = styled.div`

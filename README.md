@@ -62,6 +62,7 @@ $ npm run start
 1. Refreshing the posts list page will reset the filters to default value i.e ```all-categories```.
 2. If the thumbnail image is not coming from the API, IMAGE_NOT_FOUND dummy image is shown on both pages. 
 3. For Posts List API, orderBy, order, pageSize paramters are hard-coded.
+4. Header Logo click navigates to root url i.e posts list page.
 
 ## Tested on 
 1. Browsers - Chrome, Safari and Firefox

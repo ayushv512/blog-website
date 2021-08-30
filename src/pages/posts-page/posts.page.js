@@ -4,14 +4,14 @@ import CategoryContainer from "../../components/category-component/category.cont
 import PostContainer from "../../components/post-component/post.container";
 
 import { messages } from "../../config";
-import { PostsPageWrapper, PostsPageSection } from "./style";
+import { PostsPageWrapper, PostsPageSection, PostsPageImgContainer, PostsPageSectionTitle } from "./style";
 
 const PostsPage = () => {
   return (
     <PostsPageWrapper>
-      <div className="img-container"> {messages.TRUECALLER_BLOG} </div>
+      <PostsPageImgContainer> {messages.TRUECALLER_BLOG} </PostsPageImgContainer>
       <PostsPageSection>
-        <div className="title">{messages.LATEST_ARTICLES}</div>
+        <PostsPageSectionTitle>{messages.LATEST_ARTICLES}</PostsPageSectionTitle>
         <CategoryContainer />
         <PostContainer />
       </PostsPageSection>
