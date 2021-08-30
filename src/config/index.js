@@ -15,7 +15,10 @@ export const themeColors = {
 // messages for the pages
 export const messages = {
   TRUECALLER_BLOG: "The Truecaller Blog",
-  LATEST_ARTICLES: "Latest articles"
+  LATEST_ARTICLES: "Latest articles",
+  PAGE_NOT_FOUND: "Page Not Found",
+  PAGE_NOT_FOUND_SUBTEXT: "It looks like nothing was found at this location. Please check if you might have mistyped.",
+  GOTO_HOMEPAGE: "or Go to Homepage"
 }
 
 // Base URL

@@ -24,8 +24,8 @@ const PostDetailComponent = props => {
 
   useEffect(() => {
     if (props.postDetail === "error") {
-      // route to home blogs page
-      history.push("/blogs");
+      // route to page not foundß
+      history.push("/page-not-found");
     }
   }, [props.postDetail]); // eslint-disable-line react-hooks/exhaustive-deps
 
