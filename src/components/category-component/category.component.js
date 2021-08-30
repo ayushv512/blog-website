@@ -1,11 +1,14 @@
 import React, { useEffect } from "react";
-import { CategoryComponentWrapper } from './style';
+import { CategoryComponentWrapper } from "./style";
 import { assignColorToCategories } from "../../utils";
-import { DEFAULT_CATEGORY, DEFAULT_PAGE_SIZE, DEFAULT_PAGE_NUMBER } from "../../constants";
-import PropTypes from 'prop-types';
+import {
+  DEFAULT_CATEGORY,
+  DEFAULT_PAGE_SIZE,
+  DEFAULT_PAGE_NUMBER
+} from "../../constants";
+import PropTypes from "prop-types";
 
 const CategoryComponent = props => {
-
   useEffect(() => {
     props.categoriesGetAction();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
@@ -30,26 +33,22 @@ const CategoryComponent = props => {
     props.setPaginationConfigAction({
       pageNumber: DEFAULT_PAGE_NUMBER,
       pageSize: DEFAULT_PAGE_SIZE
-    })
+    });
     props.postsGetAction();
   };
 
-  return (
-    props.categoriesList
-      ? (
-        <CategoryComponentWrapper>
-          <select
-            className="category-filter-dropdown"
-            onChange={e => categoryFilterChangeHandler(e)}
-            defaultValue={props.selectedCategory || DEFAULT_CATEGORY}
-          >
-            <option value={DEFAULT_CATEGORY}>All categories</option>
-            {createOptions()}
-          </select>
-        </CategoryComponentWrapper>
-      )
-      : null
-  );
+  return props.categoriesList ? (
+    <CategoryComponentWrapper>
+      <select
+        className="category-filter-dropdown"
+        onChange={e => categoryFilterChangeHandler(e)}
+        defaultValue={props.selectedCategory || DEFAULT_CATEGORY}
+      >
+        <option value={DEFAULT_CATEGORY}>All categories</option>
+        {createOptions()}
+      </select>
+    </CategoryComponentWrapper>
+  ) : null;
 };
 
 CategoryComponent.propTypes = {

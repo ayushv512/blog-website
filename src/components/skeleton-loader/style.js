@@ -3,7 +3,6 @@ import { themeColors } from "../../config";
 import { deviceWidths } from "../../constants";
 
 export const SkeletonHolderWrapper = styled.div`
-  
   .posts-loader {
     width: 100%;
     display: flex;
@@ -84,7 +83,7 @@ export const SkeletonHolderWrapper = styled.div`
       animation: 5s loading-placeholder ease-in-out infinite;
     }
   }
-  
+
   @keyframes loading-placeholder {
     0% {
       transform: translateX(-100%);
@@ -95,7 +94,7 @@ export const SkeletonHolderWrapper = styled.div`
   }
 
   @media (max-width: ${deviceWidths.tabletWidth}) {
-    .posts-loader{
+    .posts-loader {
       .bars {
         width: 100%;
         box-sizing: border-box;
@@ -114,14 +113,13 @@ export const SkeletonHolderWrapper = styled.div`
     }
   }
 
-  @media (max-width:${deviceWidths.phoneWidth}) { 
-    .posts-loader{ 
+  @media (max-width: ${deviceWidths.phoneWidth}) {
+    .posts-loader {
       .bars {
         .bar2 {
           height: 200px;
         }
       }
     }
-   
   }
 `;

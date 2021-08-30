@@ -47,7 +47,6 @@ export const PostDetailTitle = styled.div`
   }
 `;
 
-
 export const AuthorDetailsSection = styled.div`
   display: flex;
   margin: 25px 0;
@@ -81,7 +80,7 @@ export const PostDetailContent = styled.div`
   img {
     display: flex;
     margin: 0 auto;
-    max-width: fit-content; 
+    max-width: fit-content;
     max-width: -webkit-fill-available;
     max-width: -moz-available;
     height: auto;

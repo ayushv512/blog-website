@@ -9,7 +9,6 @@ import {
   PostDetailTitle
 } from "./style";
 
-import LoadingComponent from "../loading-component/loading-component";
 import { IMAGE_NOT_FOUND_URL } from "../../constants/index";
 import { formatDate } from "../../utils";
 import PropTypes from "prop-types";

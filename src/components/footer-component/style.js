@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { themeColors } from '../../config';
+import styled from "styled-components";
+import { themeColors } from "../../config";
 import { deviceWidths } from "../../constants";
 
 export const FooterComponentWrapper = styled.div`

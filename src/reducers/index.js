@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import categories from "./categories";
 import posts from "./posts";
 import selectedCategory from "./selected-category";
-import postDetail from './post-detail';
+import postDetail from "./post-detail";
 import categoriesColor from "./categories-color";
 import paginationConfig from "./pagination-config";
 
