@@ -30,7 +30,7 @@ const PostComponent = props => {
     if (Object.keys(props.categoriesColor).length) {
       props.postsGetAction();
     }
-  }, [props.categoriesColor]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [Object.keys(props.categoriesColor).length]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const updatePageNumber = page => {
     props.setPaginationConfigAction({

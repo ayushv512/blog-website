@@ -65,6 +65,7 @@ $ npm start
 2. If the thumbnail image is not coming from the HTTP API, the IMAGE_NOT_FOUND dummy image is shown on both pages. 
 3. For Posts List HTTP API, orderBy, order, and pageSize parameters are pre-defined and can not be changed.
 4. Header Logo click navigates to root URL i.e. posts list page.
+5. Post Detail content is safe and XSS invulnerable.
 
 ## Tested on 
 1. Browsers - Chrome, Safari, and Firefox
