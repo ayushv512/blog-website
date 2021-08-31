@@ -72,8 +72,8 @@ $ npm start
 2. Devices - iPhone 6/7/8 Plus, iPhone 6/7/8, iPad, Pixel and OnePlus 
 
 ## Screenshots
-![Desktop-Post Details page](https://user-images.githubusercontent.com/32220773/131502500-cf95d3ea-806e-440f-85ac-fb3839a0b322.png)
 ![Desktop-Post Page](https://user-images.githubusercontent.com/32220773/131502587-17b51bb3-b893-4d8d-bfb0-1f6e9062e1f3.png)
+![Desktop-Post Details page](https://user-images.githubusercontent.com/32220773/131502500-cf95d3ea-806e-440f-85ac-fb3839a0b322.png)
 <img width="415" alt="Mobile-Post page -1" src="https://user-images.githubusercontent.com/32220773/131502870-5f1bd7dd-2b0d-40a6-ae8b-10afec8c70d5.png">
 <img width="413" alt="Mobile-Post page -2" src="https://user-images.githubusercontent.com/32220773/131502882-77e51cbb-d112-46cc-84c5-cf207c65de9e.png">
 <img width="418" alt="Mobile -Post detail" src="https://user-images.githubusercontent.com/32220773/131502988-3a38dce3-26d9-4184-bfed-9e6dc042abaf.png">
