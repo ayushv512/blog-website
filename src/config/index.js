@@ -19,7 +19,8 @@ export const messages = {
   PAGE_NOT_FOUND: "Page Not Found",
   PAGE_NOT_FOUND_SUBTEXT:
     "It looks like nothing was found at this location. Please check if you might have mistyped.",
-  GOTO_HOMEPAGE: "or Go to Homepage"
+  GOTO_HOMEPAGE: "or Go to Homepage",
+  FOOTER_TEXT: "True Software Scandinavia AB"
 };
 
 // Base URL

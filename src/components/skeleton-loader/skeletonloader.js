@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { SkeletonHolderWrapper } from "./style";
 import LoadingComponent from "../loading-component/loading-component";
+import PropTypes from "prop-types";
 
 const SkeletonLoader = props => {
   const [bars, setBars] = useState([]);
@@ -24,7 +25,7 @@ const SkeletonLoader = props => {
         }
       >
         {bars.length > 0
-          ? bars.map((item, index) => {
+          ? bars.map((_, index) => {
               return (
                 <div className="bars" key={index}>
                   <div className="bar bar1 loading" />
@@ -38,6 +39,10 @@ const SkeletonLoader = props => {
       </div>
     </SkeletonHolderWrapper>
   );
+};
+
+SkeletonLoader.propTypes = {
+  whichPage: PropTypes.string
 };
 
 export default SkeletonLoader;

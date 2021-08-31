@@ -6,7 +6,7 @@ export const CategoryComponentWrapper = styled.div`
   width: 300px;
   overflow: hidden;
   position: relative;
-  background-color: #ffffff;
+  background-color: ${themeColors.white};
 
   &:after {
     width: 0;
