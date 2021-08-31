@@ -79,7 +79,7 @@ export const AuthorDate = styled.span`
 `;
 
 export const PostDetailContent = styled.div`
-  margin: 25px 0;
+  margin: 25px 0 45px;
   img {
     display: flex;
     margin: 0 auto;
