@@ -5,10 +5,10 @@ import { timeDifference } from "../../utils";
 import { DEFAULT_PAGE_SIZE, IMAGE_NOT_FOUND_URL } from "../../constants";
 import {
   PostsComponentWrapper,
-  PostsCardWrapper,
-  PostsCardImg,
-  PostsCardTitle,
-  PostsCardDate,
+  PostCardWrapper,
+  PostCardImg,
+  PostCardTitle,
+  PostCardDate,
   CategoriesSection,
   Category,
   Bullet,
@@ -75,20 +75,20 @@ const PostComponent = props => {
     }
 
     return (
-      <PostsCardWrapper
+      <PostCardWrapper
         key={post_thumbnail.ID}
         onClick={() => postCardHandler(slug)}
       >
         {getCategoriesPills(postItem.categories)}
-        <PostsCardImg
+        <PostCardImg
           src={post_thumbnail.URL}
           alt="post thumbnail"
-        ></PostsCardImg>
-        <PostsCardTitle
+        ></PostCardImg>
+        <PostCardTitle
           dangerouslySetInnerHTML={{ __html: title }}
-        ></PostsCardTitle>
-        <PostsCardDate>{formatDate(date)}</PostsCardDate>
-      </PostsCardWrapper>
+        ></PostCardTitle>
+        <PostCardDate>{formatDate(date)}</PostCardDate>
+      </PostCardWrapper>
     );
   };
 

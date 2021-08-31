@@ -9,13 +9,14 @@ export const PostsComponentWrapper = styled.div`
   justify-content: space-between;
 `;
 
-export const PostsCardWrapper = styled.div`
+export const PostCardWrapper = styled.div`
   width: 340px;
   margin: 20px 0;
   border: 1px solid ${themeColors.border};
   background-color: ${themeColors.white};
   box-shadow: 0 2px 2px rgb(0 0 0 / 0.1);
   cursor: pointer;
+  border-radius:4px;
 
   @media (max-width: ${deviceWidths.tabletWidth}) {
     width: 100%;
@@ -23,7 +24,7 @@ export const PostsCardWrapper = styled.div`
   }
 `;
 
-export const PostsCardImg = styled.img`
+export const PostCardImg = styled.img`
   width: 340px;
   height: 200px;
 
@@ -37,7 +38,7 @@ export const PostsCardImg = styled.img`
   }
 `;
 
-export const PostsCardTitle = styled.div`
+export const PostCardTitle = styled.div`
   margin: 10px 25px;
   line-height: 1.2;
   font-size: 16px;
@@ -57,7 +58,7 @@ export const PostsCardTitle = styled.div`
   }
 `;
 
-export const PostsCardDate = styled.div`
+export const PostCardDate = styled.div`
   margin: 10px 25px;
   color: ${themeColors.date};
   font-weight: 500;
