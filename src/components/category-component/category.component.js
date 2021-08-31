@@ -10,7 +10,9 @@ import PropTypes from "prop-types";
 
 const CategoryComponent = props => {
   useEffect(() => {
-    props.categoriesGetAction();
+    if (props.categoriesList === null) {
+      props.categoriesGetAction();
+    }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
